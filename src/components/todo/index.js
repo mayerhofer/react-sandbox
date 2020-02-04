@@ -13,12 +13,12 @@ import {
 import * as actions from "../../actions/activityActions";
 import "./todo.css";
 
-const popover = (
+const popover = item => (
   <Popover id="popover-basic">
-    <Popover.Title as="h3">Popover right</Popover.Title>
+    <Popover.Title as="h3">{item.name}</Popover.Title>
     <Popover.Content>
-      And here's some <strong>amazing</strong> content. It's very engaging.
-      right?
+      {`Detail: ${item.description ? item.description : "nothing"}`}{" "}
+      <strong>amazing</strong>! right?
     </Popover.Content>
   </Popover>
 );
@@ -54,7 +54,7 @@ class TodoBox extends React.Component {
           <ListGroup>
             {this.props.activities.map(item => (
               <ListGroup.Item key={item.elementId} variant="info">
-                <OverlayTrigger overlay={<Tooltip>Test</Tooltip>}>
+                <OverlayTrigger placement="right" overlay={popover(item)}>
                   <div>{item.name}</div>
                 </OverlayTrigger>
               </ListGroup.Item>

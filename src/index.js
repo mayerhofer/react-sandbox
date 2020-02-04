@@ -40,11 +40,13 @@ const initialState = {
     },
     {
       elementId: 2,
-      name: "act 2"
+      name: "act 2",
+      description: "Nao sei"
     },
     {
       elementId: 3,
-      name: "act 3"
+      name: "act 3",
+      description: "Alguns detalhes"
     }
   ]
 };
