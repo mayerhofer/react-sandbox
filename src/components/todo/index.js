@@ -54,7 +54,7 @@ class TodoBox extends React.Component {
           <ListGroup>
             {this.props.activities.map(item => (
               <ListGroup.Item key={item.elementId} variant="info">
-                <OverlayTrigger placement="right" overlay={popover(item)}>
+                <OverlayTrigger placement="bottom" overlay={popover(item)}>
                   <div>{item.name}</div>
                 </OverlayTrigger>
               </ListGroup.Item>
